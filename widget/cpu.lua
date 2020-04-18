@@ -8,10 +8,8 @@
 
 local helpers  = require("lain.helpers")
 local wibox    = require("wibox")
-local math     = math
-local string   = string
-local tostring = tostring
-
+local naughty              = require("naughty")
+local fmt = string.format
 -- CPU usage
 -- lain.widget.cpu
 
@@ -20,6 +18,35 @@ local function factory(args)
     local args     = args or {}
     local timeout  = args.timeout or 2
     local settings = args.settings or function() end
+    local showpopup = args.showpopup or "on"
+
+  cpu.followtag           = args.followtag or false
+  cpu.notification_preset = args.notification_preset
+
+  if not cpu.notification_preset then
+      cpu.notification_preset = {
+        font = "Monospace 10",
+        fg   = "#FFFFFF",
+        bg   = "#000000"
+      }
+  end
+
+  function cpu.hide()
+    if not cpu.notification then
+      return
+    end
+    naughty.destroy(cpu.notification)
+    cpu.notification = nil
+  end
+
+  function cpu.show(seconds, scr)
+    cpu.hide(); cpu.update()
+    cpu.notification_preset.screen = cpu.followtag and focused() or scr or 1
+    cpu.notification = naughty.notify {
+      preset  = cpu.notification_preset,
+      timeout = type(seconds) == "number" and seconds or 5
+    }
+  end
 
     function cpu.update()
         -- Read the amount of time the CPUs have spent performing
@@ -65,7 +92,18 @@ local function factory(args)
         widget = cpu.widget
 
         settings()
+        
+        local text = { [1] = fmt("%s %s %s %s %s %s\n", "cpu0", "cpu1", "cpu2", "cpu3", "cpu4", "cpu5") }
+        text[#text+1]      = fmt("%4d %4d %4d %4d %4d %4d", cpu_now[1].usage, cpu_now[2].usage, cpu_now[3].usage, cpu_now[4].usage,
+                                                     cpu_now[5].usage, cpu_now[6].usage)
+        cpu.notification_preset.text = table.concat(text)
+
     end
+    if showpopup == "on" then
+      cpu.widget:connect_signal('mouse::enter', function () cpu.show(0) end)
+      cpu.widget:connect_signal('mouse::leave', function () cpu.hide() end)
+    end
+
 
     helpers.newtimer("cpu", timeout, cpu.update)
 

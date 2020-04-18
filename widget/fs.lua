@@ -69,7 +69,7 @@ local function factory(args)
     end
 
     function fs.update()
-        local notifytable = { [1] = string.format("%-10s %4s\t%6s\t%6s\t\n", "path", "used", "free", "size") }
+        local notifytable = { [1] = string.format("%-10s %4s\t%6s\t%6s\t", "path", "used", "free", "size") }
         local pathlen = 10
         local maxpathidx = 1
         fs_now = {}
