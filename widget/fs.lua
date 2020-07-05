@@ -29,9 +29,9 @@ local function factory(args)
     local fs = {
         widget = wibox.widget.textbox(),
         units = {
-            [1] = "Kb", [2] = "Mb", [3] = "Gb",
-            [4] = "Tb", [5] = "Pb", [6] = "Eb",
-            [7] = "Zb", [8] = "Yb"
+            [1] = "KB", [2] = "MB", [3] = "GB",
+            [4] = "TB", [5] = "PB", [6] = "EB",
+            [7] = "ZB", [8] = "YB"
         }
     }
 
