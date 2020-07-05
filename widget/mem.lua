@@ -1,5 +1,6 @@
 --[[
      Licensed under GNU General Public License v2
+      * (c) 2020,      Andrus Suvalau
       * (c) 2013,      Luca CPZ
       * (c) 2010-2012, Peter Hofmann
 --]]
@@ -71,9 +72,9 @@ local function factory(args)
     widget = mem.widget
     settings()
 
-    local text = { [1] = fmt("%-5s\t%-5s\t%-5s\t%-5s\t%-4s\n", "type", "total", "used", "free", "unit") }
-    text[#text+1]      = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s\n", "ram",  mem_now.total, mem_now.used, mem_now.free,  "MB")
-    text[#text+1]      = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s"  , "swap", mem_now.swap, mem_now.swapused, mem_now.swapf, "MB")
+    local text = { [1] = fmt("%-5s\t%-5s\t%-5s\t%-5s\t%-4s\n", "type", "total", "used", "free", "unit"),
+                   [2] = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s\n", "ram",  mem_now.total, mem_now.used, mem_now.free,  "MB"),
+                   [3] = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s"  , "swap", mem_now.swap, mem_now.swapused, mem_now.swapf, "MB") }
     mem.notification_preset.text = table.concat(text)
   end
 

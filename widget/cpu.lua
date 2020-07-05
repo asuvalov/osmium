@@ -1,9 +1,8 @@
 --[[
-
      Licensed under GNU General Public License v2
+      * (c) 2020,      Andrus Suvalau
       * (c) 2013,      Luca CPZ
       * (c) 2010-2012, Peter Hofmann
-
 --]]
 
 local helpers = require("lain.helpers")
@@ -88,7 +87,7 @@ local function factory(args)
       local names  = ''
       local values = ''
       for index, value in pairs(cpu.core) do
-        if index ~= 0 and index ~= 'usage' then
+        if type(index) == 'number' and index ~= 0 then
           names  = names  .. string.format('cpu%d ', index - 1)
           values = values .. string.format('%4d ', value.usage)
         end
