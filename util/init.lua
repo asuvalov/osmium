@@ -16,12 +16,12 @@ local sqrt         = math.sqrt
 local pairs        = pairs
 local client       = client
 local tonumber     = tonumber
-local wrequire     = require("lain.helpers").wrequire
+local wrequire     = require("osmium.helpers").wrequire
 local setmetatable = setmetatable
 
 -- Lain utilities submodule
--- lain.util
-local util = { _NAME = "lain.util" }
+-- osmium.util
+local util = { _NAME = "osmium.util" }
 
 -- Like awful.menu.clients, but only show clients of currently selected tags
 function util.menu_clients_current_tags(menu, args)
@@ -76,7 +76,7 @@ function util.magnify_client(c, width_f, height_f)
     end
 end
 
--- https://github.com/lcpz/lain/issues/195
+-- https://github.com/lcpz/osmium/issues/195
 function util.mc(c, width_f, height_f)
     c = c or util.magnified_client
     if not c then return end

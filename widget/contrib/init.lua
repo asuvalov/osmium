@@ -10,9 +10,9 @@
 
 --]]
 
-local wrequire     = require("lain.helpers").wrequire
+local wrequire     = require("osmium.helpers").wrequire
 local setmetatable = setmetatable
 
-local widget = { _NAME = "lain.widget.contrib" }
+local widget = { _NAME = "osmium.widget.contrib" }
 
 return setmetatable(widget, { __index = wrequire })

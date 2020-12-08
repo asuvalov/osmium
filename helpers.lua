@@ -16,7 +16,7 @@ local table      = { sort  = table.sort, unpack = table.unpack }
 local unpack     = unpack or table.unpack -- lua 5.1 retro-compatibility
 
 -- Lain helper functions for internal use
--- lain.helpers
+-- osmium.helpers
 local helpers = {}
 
 helpers.lain_dir    = debug.getinfo(1, 'S').source:match[[^@(.*/).*$]]

@@ -5,7 +5,7 @@
 
 --]]
 
-local helpers = require("lain.helpers")
+local helpers = require("osmium.helpers")
 local shell   = require("awful.util").shell
 local wibox   = require("wibox")
 local awful   = require("awful")
@@ -13,7 +13,7 @@ local string  = string
 local type    = type
 
 -- xbacklight
--- lain.widget.backlight
+-- osmium.widget.backlight
 
 local function factory(args)
     local backlight = { widget = wibox.widget.textbox() }

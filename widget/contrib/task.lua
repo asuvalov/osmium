@@ -5,15 +5,15 @@
 
 --]]
 
-local helpers = require("lain.helpers")
-local markup  = require("lain.util").markup
+local helpers = require("osmium.helpers")
+local markup  = require("osmium.util").markup
 local awful   = require("awful")
 local naughty = require("naughty")
 local mouse   = mouse
 local string  = string
 
 -- Taskwarrior notification
--- lain.widget.contrib.task
+-- osmium.widget.contrib.task
 local task = {}
 
 function task.hide()

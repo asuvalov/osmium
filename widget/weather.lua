@@ -5,8 +5,8 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
-local json     = require("lain.util").dkjson
+local helpers  = require("osmium.helpers")
+local json     = require("osmium.util").dkjson
 local focused  = require("awful.screen").focused
 local naughty  = require("naughty")
 local wibox    = require("wibox")
@@ -18,12 +18,12 @@ local tonumber = tonumber
 
 -- OpenWeatherMap
 -- current weather and X-days forecast
--- lain.widget.weather
+-- osmium.widget.weather
 
 local function factory(args)
     local weather               = { widget = wibox.widget.textbox() }
     local args                  = args or {}
-    local APPID                 = args.APPID or "3e321f9414eaedbfab34983bda77a66e" -- lain's default
+    local APPID                 = args.APPID or "3e321f9414eaedbfab34983bda77a66e" -- osmium's default
     local timeout               = args.timeout or 60 * 15 -- 15 min
     local timeout_forecast      = args.timeout or 60 * 60 * 24 -- 24 hrs
     local current_call          = args.current_call  or "curl -s 'http://api.openweathermap.org/data/2.5/weather?id=%s&units=%s&lang=%s&APPID=%s'"

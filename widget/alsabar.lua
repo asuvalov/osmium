@@ -6,7 +6,7 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
+local helpers  = require("osmium.helpers")
 local awful    = require("awful")
 local naughty  = require("naughty")
 local wibox    = require("wibox")
@@ -16,7 +16,7 @@ local type     = type
 local tonumber = tonumber
 
 -- ALSA volume bar
--- lain.widget.alsabar
+-- osmium.widget.alsabar
 
 local function factory(args)
     local alsabar = {

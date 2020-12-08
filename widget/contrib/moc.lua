@@ -5,7 +5,7 @@
 
 --]]
 
-local helpers      = require("lain.helpers")
+local helpers      = require("osmium.helpers")
 local shell        = require("awful.util").shell
 local focused      = require("awful.screen").focused
 local escape_f     = require("awful.util").escape
@@ -15,7 +15,7 @@ local os           = os
 local string       = string
 
 -- MOC audio player
--- lain.widget.contrib.moc
+-- osmium.widget.contrib.moc
 
 local function factory(args)
     local moc           = { widget = wibox.widget.textbox() }

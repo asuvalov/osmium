@@ -11,7 +11,7 @@ local format = string.format
 local setmetatable = setmetatable
 
 -- Lain markup util submodule
--- lain.util.markup
+-- osmium.util.markup
 local markup = { fg = {}, bg = {} }
 
 -- Convenience tags

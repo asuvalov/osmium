@@ -5,12 +5,12 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
+local helpers  = require("osmium.helpers")
 local wibox    = require("wibox")
 local tonumber = tonumber
 
 -- {thermal,core} temperature info
--- lain.widget.temp
+-- osmium.widget.temp
 
 local function factory(args)
     local temp     = { widget = wibox.widget.textbox() }

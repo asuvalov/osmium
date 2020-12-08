@@ -8,11 +8,11 @@
 --]]
 
 -- Menu iterator with Naughty notifications
--- lain.util.menu_iterator
+-- osmium.util.menu_iterator
 
 local naughty = require("naughty")
-local helpers = require("lain.helpers")
-local util    = require("lain.util")
+local helpers = require("osmium.helpers")
+local util    = require("osmium.util")
 local atable  = require("awful.util").table
 local assert  = assert
 local pairs   = pairs

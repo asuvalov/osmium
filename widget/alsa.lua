@@ -6,13 +6,13 @@
 
 --]]
 
-local helpers = require("lain.helpers")
+local helpers = require("osmium.helpers")
 local shell   = require("awful.util").shell
 local wibox   = require("wibox")
 local string  = string
 
 -- ALSA volume
--- lain.widget.alsa
+-- osmium.widget.alsa
 
 local function factory(args)
     local alsa     = { widget = wibox.widget.textbox() }

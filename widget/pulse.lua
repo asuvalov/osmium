@@ -5,14 +5,14 @@
 
 --]]
 
-local helpers = require("lain.helpers")
+local helpers = require("osmium.helpers")
 local shell   = require("awful.util").shell
 local wibox   = require("wibox")
 local string  = string
 local type    = type
 
 -- PulseAudio volume
--- lain.widget.pulse
+-- osmium.widget.pulse
 
 local function factory(args)
     local pulse    = { widget = wibox.widget.textbox(), device = "N/A" }

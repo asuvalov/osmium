@@ -9,7 +9,7 @@
 --]]
 
 return {
-    layout = require("lain.layout"),
-    util   = require("lain.util"),
-    widget = require("lain.widget")
+    layout = require("osmium.layout"),
+    util   = require("osmium.util"),
+    widget = require("osmium.widget")
 }

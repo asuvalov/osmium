@@ -6,7 +6,7 @@
 
 --]]
 
-local helpers = require("lain.helpers")
+local helpers = require("osmium.helpers")
 local focused = require("awful.screen").focused
 local gears   = require("gears")
 local naughty = require("naughty")
@@ -16,7 +16,7 @@ local type    = type
 
 -- ThinkPad battery infos and widget creator
 -- http://www.thinkwiki.org/wiki/Tp_smapi
--- lain.widget.contrib.tp_smapi
+-- osmium.widget.contrib.tp_smapi
 
 local function factory(apipath)
     local tp_smapi = {

@@ -7,7 +7,7 @@
 
 --]]
 
-local helpers    = require("lain.helpers")
+local helpers    = require("osmium.helpers")
 local Gio        = require("lgi").Gio
 local focused    = require("awful.screen").focused
 local wibox      = require("wibox")
@@ -23,7 +23,7 @@ local query_used = Gio.FILE_ATTRIBUTE_FILESYSTEM_USED
 local query      = query_size .. "," .. query_free .. "," .. query_used
 
 -- File systems info
--- lain.widget.fs
+-- osmium.widget.fs
 
 local function factory(args)
     local fs = {

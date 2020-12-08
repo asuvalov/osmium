@@ -5,7 +5,7 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
+local helpers  = require("osmium.helpers")
 local naughty  = require("naughty")
 local wibox    = require("wibox")
 local awful    = require("awful")
@@ -14,7 +14,7 @@ local type     = type
 local tonumber = tonumber
 
 -- Mail IMAP check
--- lain.widget.imap
+-- osmium.widget.imap
 
 local function factory(args)
     local imap       = { widget = wibox.widget.textbox() }

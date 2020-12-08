@@ -6,13 +6,13 @@
 
 --]]
 
-local helpers = require("lain.helpers")
+local helpers = require("osmium.helpers")
 local naughty = require("naughty")
 local wibox   = require("wibox")
 local string  = string
 
 -- Network infos
--- lain.widget.net
+-- osmium.widget.net
 
 local function factory(args)
     local net        = { widget = wibox.widget.textbox(), devices = {} }

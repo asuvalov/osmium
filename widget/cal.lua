@@ -5,8 +5,8 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
-local markup   = require("lain.util.markup")
+local helpers  = require("osmium.helpers")
+local markup   = require("osmium.util.markup")
 local awful    = require("awful")
 local naughty  = require("naughty")
 local floor    = math.floor
@@ -19,7 +19,7 @@ local tonumber = tonumber
 local tostring = tostring
 
 -- Calendar notification
--- lain.widget.cal
+-- osmium.widget.cal
 
 local function factory(args)
     args = args or {}

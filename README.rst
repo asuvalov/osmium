@@ -1,4 +1,4 @@
-Lain
+Osmium
 ====
 
 -------------------------------------------------
@@ -8,7 +8,7 @@ Layouts, widgets and utilities for Awesome WM 4.x
 :Author: Luca CPZ
 :Version: git
 :License: GNU-GPL2_
-:Source: https://github.com/lcpz/lain
+:Source: https://github.com/asuvalov/osmium
 
 Description
 -----------

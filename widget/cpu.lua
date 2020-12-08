@@ -5,12 +5,12 @@
       * (c) 2010-2012, Peter Hofmann
 --]]
 
-local helpers = require("lain.helpers")
+local helpers = require("osmium.helpers")
 local wibox   = require("wibox")
 local naughty = require("naughty")
 
 -- CPU usage
--- lain.widget.cpu
+-- osmium.widget.cpu
 
 local function factory(args)
   local cpu       = { core = {}, widget = wibox.widget.textbox() }

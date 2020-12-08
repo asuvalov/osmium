@@ -6,7 +6,7 @@
 
 --]]
 
-local helpers  = require("lain.helpers")
+local helpers  = require("osmium.helpers")
 local fs       = require("gears.filesystem")
 local naughty  = require("naughty")
 local wibox    = require("wibox")
@@ -16,13 +16,13 @@ local ipairs   = ipairs
 local tonumber = tonumber
 
 -- Battery infos
--- lain.widget.bat
+-- osmium.widget.bat
 
 local function factory(args)
     local pspath = args.pspath or "/sys/class/power_supply/"
 
     if not fs.is_dir(pspath) then
-        naughty.notify { text = "lain.widget.bat: invalid power supply path", timeout = 0 }
+        naughty.notify { text = "osmium.widget.bat: invalid power supply path", timeout = 0 }
         return
     end
 

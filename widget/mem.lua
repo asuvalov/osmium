@@ -5,7 +5,7 @@
       * (c) 2010-2012, Peter Hofmann
 --]]
 
-local helpers              = require("lain.helpers")
+local helpers              = require("osmium.helpers")
 local wibox                = require("wibox")
 local naughty              = require("naughty")
 local tconcat              = table.concat
@@ -13,7 +13,7 @@ local gmatch, lines, floor = string.gmatch, io.lines, math.floor
 local fmt = string.format
 
 -- Memory usage (ignoring caches)
--- lain.widget.mem
+-- osmium.widget.mem
 
 local function factory(args)
   local mem       = { widget = wibox.widget.textbox() }
@@ -73,8 +73,11 @@ local function factory(args)
     settings()
 
     local text = { [1] = fmt("%-5s\t%-5s\t%-5s\t%-5s\t%-4s\n", "type", "total", "used", "free", "unit"),
-                   [2] = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s\n", "ram",  mem_now.total, mem_now.used, mem_now.free,  "MB"),
-                   [3] = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s"  , "swap", mem_now.swap, mem_now.swapused, mem_now.swapf, "MB") }
+                   [2] = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s", "ram",  mem_now.total, mem_now.used, mem_now.free,  "MB") }
+    if mem_now.swap > 0 then
+        text[2] = text[2] .. "\n"
+        text[3] = fmt("%-5s\t%-5d\t%-5d\t%-5d\t%-4s"  , "swap", mem_now.swap, mem_now.swapused, mem_now.swapf, "MB")
+    end
     mem.notification_preset.text = table.concat(text)
   end
 

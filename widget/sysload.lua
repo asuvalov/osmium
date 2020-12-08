@@ -6,12 +6,12 @@
 
 --]]
 
-local helpers     = require("lain.helpers")
+local helpers     = require("osmium.helpers")
 local wibox       = require("wibox")
 local open, match = io.open, string.match
 
 -- System load
--- lain.widget.sysload
+-- osmium.widget.sysload
 
 local function factory(args)
     local sysload  = { widget = wibox.widget.textbox() }

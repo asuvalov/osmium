@@ -6,13 +6,13 @@
 
 --]]
 
-local async   = require("lain.helpers").async
+local async   = require("osmium.helpers").async
 local awful   = require("awful")
 local execute = os.execute
 local type    = type
 
 -- Redshift
--- lain.widget.contrib.redshift
+-- osmium.widget.contrib.redshift
 local redshift = { active = false, pid = nil }
 
 function redshift:start()
